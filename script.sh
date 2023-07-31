@@ -25,7 +25,7 @@ LOG_FILE="my_script_log.txt"
 {
     echo "----- Log started: $(date) -----"
 
-    # Call your functions and store the output in the log file
+    # Function calls and store the output in the log file
    display_current_running_proc
    display_date_time_kernel
    display_kernel_dump
