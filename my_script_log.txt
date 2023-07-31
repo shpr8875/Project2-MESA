@@ -1,0 +1,12 @@
+----- Log started: Mon Jul 31 21:33:26 IST 2023 -----
+Current running processes:
+      PID    PPID    PGID     WINPID   TTY         UID    STIME COMMAND
+      277     271     271      22272  pty0      197609 21:33:26 /usr/bin/ps
+      264     263     264      22520  pty0      197609 21:27:20 /usr/bin/bash
+      271     264     271      23012  pty0      197609 21:33:26 /usr/bin/bash
+      263       1     263      24744  ?         197609 21:27:20 /usr/bin/mintty
+
+Current date and time: 2023-07-31 21:33:26
+Kernel version: 3.4.7-1.x86_64
+Kernel dump:
+----- Log ended: Mon Jul 31 21:33:27 IST 2023 -----
