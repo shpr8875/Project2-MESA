@@ -18,3 +18,17 @@ display_current_running_proc
 display_date_time_kernel
 display_kernel_dump
 
+# Log file path
+LOG_FILE="my_script_log.txt"
+
+# Redirect the output of functions to the log file
+{
+    echo "----- Log started: $(date) -----"
+
+    # Call your functions and store the output in the log file
+   display_current_running_proc
+   display_date_time_kernel
+   display_kernel_dump
+
+    echo "----- Log ended: $(date) -----"
+} >> "$LOG_FILE"
