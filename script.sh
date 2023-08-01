@@ -36,7 +36,7 @@ blink_leds() {
     echo heartbeat > trigger
     cd $led_dir/beaglebone:green:usr3
     echo heartbeat > trigger
-    echo "leds should be blinking..."
+    echo "leds should in heartbeat mode..."
   fi
 }
 
