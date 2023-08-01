@@ -1,4 +1,5 @@
 #!/bin/bash
+led_dir="/sys/class/leds"
 display_current_running_proc() {
     echo "Current running processes:"
     ps aux
@@ -12,11 +13,40 @@ display_date_time_kernel() {
 }
 display_kernel_dump() {
     echo "Kernel dump:"
-    cat /cygdrive/c/DumpStack.log.tmp
 }
+
+blink_leds() {
+  if [$1 -eq 1]
+  then
+    cd $led_dir/beaglebone:green:usr0
+    echo timer > trigger
+    cd $led_dir/beaglebone:green:usr1
+    echo timer > trigger
+    cd $led_dir/beaglebone:green:usr2
+    echo timer > trigger
+    cd $led_dir/beaglebone:green:usr3
+    echo timer > trigger
+    echo "leds should be blinking..."
+  else
+    cd $led_dir/beaglebone:green:usr0
+    echo heartbeat > trigger
+    cd $led_dir/beaglebone:green:usr1
+    echo heartbeat > trigger
+    cd $led_dir/beaglebone:green:usr2
+    echo heartbeat > trigger
+    cd $led_dir/beaglebone:green:usr3
+    echo heartbeat > trigger
+    echo "leds should be blinking..."
+  fi
+}
+
 display_current_running_proc
 display_date_time_kernel
 display_kernel_dump
+
+VAR=${1:-0}  
+
+blink_leds "$VAR"
 
 # Log file path
 LOG_FILE="my_script_log.txt"
